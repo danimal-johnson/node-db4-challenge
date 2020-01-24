@@ -40,7 +40,8 @@ exports.up = function(knex) {
         .inTable('Ingredient')
         .onDelete('RESTRICT') // What happens if this ID is deleted.
         .onUpdate('CASCADE'); // What happens if this ID changes.
-
+      tbl.integer('quantity')
+        .unsigned();
         // CASCADE, SET NULL, DO NOTHING, RESTRICT
     });
 };
